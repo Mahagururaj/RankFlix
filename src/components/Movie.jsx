@@ -5,7 +5,8 @@ import axios from "../utils/axios";
 import Dropdown from "./templates/Dropdown";
 import Cards from "./templates/Cards";
 import Loading from "./Loading";
-import InfiniteScroll from "react-infinite-scroll-component";
+import InfiniteScroll from 'react-infinite-scroll-component';
+
 
 const Movie = () => {
   const navigate = useNavigate();
