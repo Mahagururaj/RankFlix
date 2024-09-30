@@ -21,7 +21,6 @@ const Home = () => {
       setWallpaper(randomData);
     } catch (error) {
       console.log("Error", error);
-      setError("Failed to load wallpaper.");
     }
   };
 
@@ -31,18 +30,13 @@ const Home = () => {
       setTrending(data.results);
     } catch (error) {
       console.log("Error", error.message);
-      setError("Failed to load trending content.");
     }
   };
 
   useEffect(() => {
-    if (!wallpaper) GetHeaderWallpaper();
     GetTrending();
+     !wallpaper && GetHeaderWallpaper();
   }, [category]);
-
-  if (error) {
-    return <div className="text-center text-red-500">{error}</div>;
-  }
 
   return wallpaper && trending ? (
     <>
